@@ -19,3 +19,7 @@ bin/*
 Berksfile.lock
 .zero-knife.rb
 Policyfile.lock.json
+
+test/organizations/chef
+test/fixtures/checksums
+test/fixtures/cookbooks
