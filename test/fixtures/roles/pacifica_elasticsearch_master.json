@@ -1,0 +1,31 @@
+{
+  "description": "The pacifica elasticsearch cluster role.",
+  "name": "pacifica_elasticsearch_master",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+    "java": {
+      "jdk_version": "8"
+    },
+    "elasticsearch": {
+      "configure": {
+        "configuration": {
+          "network.host": "_enp0s8_"
+        }
+      },
+      "install": {
+        "version": "5.1.1"
+      }
+    }
+  },
+  "override_attributes": {
+
+  },
+  "run_list": [
+    "recipe[java]",
+    "recipe[elasticsearch]"
+  ],
+  "env_run_lists": {
+
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "description": "The ingest server role.",
+  "name": "pacifica_ingest",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "run_list": [
+
+  ],
+  "env_run_lists": {
+
+  }
+}
