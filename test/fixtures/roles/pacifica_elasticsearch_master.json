@@ -10,7 +10,7 @@
     "elasticsearch": {
       "configure": {
         "configuration": {
-          "network.host": "_enp0s8_"
+          "network.host": "_site_"
         }
       },
       "install": {
