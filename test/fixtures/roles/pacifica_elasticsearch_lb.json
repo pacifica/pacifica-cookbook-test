@@ -1,0 +1,20 @@
+{
+  "description": "The elasticsearch load balancer role.",
+  "name": "pacifica_elasticsearch_lb",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+    "pacifica-integration-test": {
+      "elastic_search": "roles:pacifica_elasticsearch_master OR roles:pacifica_elasticsearch_slave"
+    }
+  },
+  "override_attributes": {
+
+  },
+  "run_list": [
+    "recipe[pacifica-integration-test::elasticlb]"
+  ],
+  "env_run_lists": {
+
+  }
+}
