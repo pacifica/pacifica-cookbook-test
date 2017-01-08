@@ -1,0 +1,18 @@
+{
+  "description": "The postgresql server role.",
+  "name": "pacifica_pgsql",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "run_list": [
+    "recipe[pacifica-integration-test::pgsql]",
+  ],
+  "env_run_lists": {
+
+  }
+}
