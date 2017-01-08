@@ -11,7 +11,8 @@
   },
   "run_list": [
     "recipe[rabbitmq]",
-    "recipe[pacifica-integration-test::mysql]"
+    "recipe[pacifica-integration-test::mysql]",
+    "recipe[pacifica-integration-test::uniqueid]"
   ],
   "env_run_lists": {
 
