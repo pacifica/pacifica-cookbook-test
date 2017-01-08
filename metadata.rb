@@ -10,3 +10,8 @@ issues_url 'https://github.com/pacifica/pacifica-cookbook-test/issues' if respon
 source_url 'https://github.com/pacifica/pacifica-cookbook-test' if respond_to?(:source_url)
 
 depends 'pacifica'
+depends 'postgresql', '< 6.0.0'
+depends 'database', '>= 6.1.0'
+depends 'yum-mysql-community', '>= 2.0.0'
+depends 'mysql2_chef_gem', '>= 1.1.0'
+depends 'mysql', '>= 8.2.0'
