@@ -1,0 +1,19 @@
+{
+  "description": "The core server role.",
+  "name": "pacifica_core",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "run_list": [
+    "recipe[rabbitmq]",
+    "recipe[pacifica-integration-test::mysql]"
+  ],
+  "env_run_lists": {
+
+  }
+}
