@@ -1,4 +1,6 @@
+include_recipe 'chef-sugar'
 include_recipe 'yum-mysql-community::mysql56'
+
 mysql2_chef_gem 'default' do
   provider Chef::Provider::Mysql2ChefGem::Mysql
 end
