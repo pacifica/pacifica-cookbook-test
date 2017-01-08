@@ -10,7 +10,7 @@
 
   },
   "run_list": [
-    "recipe[pacifica-integration-test::pgsql]",
+    "recipe[pacifica-integration-test::pgsql]"
   ],
   "env_run_lists": {
 
