@@ -5,3 +5,4 @@ metadata
 cookbook 'pacifica', github: 'pacifica/pacifica-cookbook'
 cookbook 'elasticsearch'
 cookbook 'java'
+cookbook 'rabbitmq'
