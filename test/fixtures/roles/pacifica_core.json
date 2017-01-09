@@ -10,6 +10,7 @@
 
   },
   "run_list": [
+    "recipe[chef-client]",
     "recipe[rabbitmq]",
     "recipe[pacifica-integration-test::mysql]",
     "recipe[pacifica-integration-test::uniqueid]"

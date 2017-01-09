@@ -12,6 +12,7 @@
 
   },
   "run_list": [
+    "recipe[chef-client]",
     "recipe[pacifica-integration-test::elasticlb]"
   ],
   "env_run_lists": {
