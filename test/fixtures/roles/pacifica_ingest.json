@@ -11,7 +11,10 @@
   },
   "run_list": [
     "recipe[chef-client]",
-    "recipe[pacifica-integration-test::ingest]"
+    "recipe[pacifica-integration-test::ingest]",
+    "recipe[pacifica-integration-test::cart]",
+    "recipe[pacifica-integration-test::status]",
+    "recipe[pacifica-integration-test::reporting]"
   ],
   "env_run_lists": {
 
