@@ -10,6 +10,3 @@ ingest_env = {
 pacifica_ingestfrontend 'default' do
   service_opts ingest_env
 end
-pacifica_cartfrontend 'cartwsgi'
-pacifica_status 'status'
-pacifica_reporting 'reporting'
