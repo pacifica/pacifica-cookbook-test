@@ -14,7 +14,7 @@ end
       ret = '127.0.0.1'
       search(
         :node,
-        "chef_environment:#{node.chef_environment} AND roles:pacifica_#{role_suffix}",
+        "chef_environment:\#{node.chef_environment} AND roles:pacifica_#{role_suffix}",
         filter_result: { ipaddress: ['ipaddress'] }
       ).each do |result|
         ret = result['ipaddress']
