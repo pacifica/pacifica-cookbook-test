@@ -20,5 +20,6 @@ end
   ingest
   pgsql
 ).each do |role_suffix|
-  self.instance_variable_set("#{role_suffix}_ipaddress", _factory_ipaddress(role_suffix))
+  attr_accessor "#{role_suffix}_ipaddress"
+  send("#{role_suffix}_ipaddress", _factory_ipaddress(role_suffix))
 end
