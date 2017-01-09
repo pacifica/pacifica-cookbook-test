@@ -1,3 +1,17 @@
+def _factory_ipaddress(role_suffix)
+  def wrapper
+    ret = '127.0.0.1'
+    search(
+      :node,
+      "chef_environment:#{node.chef_environment} AND roles:pacifica_#{role_suffix}",
+      filter_result: { ipaddress: ['ipaddress'] }
+    ).each do |result|
+      ret = result['ipaddress']
+    end
+    ret
+  end
+end
+
 %w(
   core
   elasticsearch_lb
@@ -6,18 +20,5 @@
   ingest
   pgsql
 ).each do |role_suffix|
-  str_ruby_method = %Q{
-    def #{role_suffix}_ipaddress
-      ret = '127.0.0.1'
-      search(
-        :node,
-        "chef_environment:\#{node.chef_environment} AND roles:pacifica_#{role_suffix}",
-        filter_result: { ipaddress: ['ipaddress'] }
-      ).each do |result|
-        ret = result['ipaddress']
-      end
-      ret
-    end
-  }
-  self.method_eval(str_ruby_method)
+  send("#{role_suffix}_ipaddress", _factory_ipaddress(role_suffix))
 end
