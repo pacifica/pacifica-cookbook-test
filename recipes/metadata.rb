@@ -1,7 +1,7 @@
 include_recipe 'postgresql::client'
 metadata_env = {
   environment: {
-    ELASTICDB_PORT: "tcp://#{elasticsearch_lb_ipaddress}:9200",
+    ELASTICDB_PORT: "tcp://#{elasticsearch_lb_ipaddress}:6081",
     POSTGRES_ENV_POSTGRES_DB: 'metadata',
     POSTGRES_ENV_POSTGRES_USER: 'metadata',
     POSTGRES_PORT_5432_TCP_ADDR: pgsql_ipaddress,
