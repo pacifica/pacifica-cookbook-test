@@ -1,6 +1,3 @@
-def module_name
-  self.class.to_s.split("::").first
-end
 %w(
   core
   elasticsearch_lb
@@ -22,5 +19,5 @@ end
       ret
     end
   }
-  module_name.method_eval(str_ruby_method)
+  self.method_eval(str_ruby_method)
 end
