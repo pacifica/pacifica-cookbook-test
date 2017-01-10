@@ -12,6 +12,6 @@ include_recipe 'build-essential'
 mysql_client 'default' do
   action :create
 end
-pacifica_ingestfrontend 'default' do
+pacifica_ingestfrontend 'ingest' do
   service_opts ingest_env
 end
