@@ -7,6 +7,11 @@ ingest_env = {
     MYSQL_ENV_MYSQL_PASSWORD: 'ingest',
   },
 }
+include_recipe 'yum-mysql-community::mysql56'
+include_recipe 'build-essential'
+mysql_client 'default' do
+  action :create
+end
 pacifica_ingestfrontend 'default' do
   service_opts ingest_env
 end

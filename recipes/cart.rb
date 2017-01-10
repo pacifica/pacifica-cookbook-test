@@ -7,6 +7,11 @@ cart_env = {
     MYSQL_ENV_MYSQL_PASSWORD: 'cart',
   },
 }
+include_recipe 'yum-mysql-community::mysql56'
+include_recipe 'build-essential'
+mysql_client 'default' do
+  action :create
+end
 pacifica_cartfrontend 'cartwsgi' do
   service_opts cart_env
 end
