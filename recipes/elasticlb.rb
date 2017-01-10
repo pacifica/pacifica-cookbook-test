@@ -6,6 +6,6 @@ search(
 ).each do |esnode|
   es_endpoints.push("#{esnode['ipaddress']}:9200")
 end
-pacifica_varnish 'default' do
+pacifica_varnish 'eslb' do
   backend_hosts es_endpoints
 end
