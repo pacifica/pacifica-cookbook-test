@@ -1,0 +1,20 @@
+{
+  "description": "The worker server role.",
+  "name": "pacifica_worker",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "run_list": [
+    "recipe[chef-client]",
+    "recipe[pacifica-integration-test::ingestbackend]",
+    "recipe[pacifica-integration-test::cartbackend]"
+  ],
+  "env_run_lists": {
+
+  }
+}

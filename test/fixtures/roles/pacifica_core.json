@@ -15,7 +15,8 @@
     "recipe[pacifica-integration-test::mysql]",
     "recipe[pacifica-integration-test::uniqueid]",
     "recipe[pacifica-integration-test::metadata]",
-    "recipe[pacifica-integration-test::policy]"
+    "recipe[pacifica-integration-test::policy]",
+    "recipe[pacifica-integration-test::nfsserver]"
   ],
   "env_run_lists": {
 
