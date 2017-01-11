@@ -23,6 +23,7 @@ mount 'ingest-data' do
   options 'rw'
   action [:mount, :enable]
   not_if { core_ipaddress.eql?('127.0.0.1') }
+  ignore_failure true
   notifies :restart, 'service[ingest]'
 end
 pacifica_ingestfrontend 'ingest' do

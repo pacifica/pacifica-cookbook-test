@@ -16,6 +16,9 @@ mysql_client 'default' do
 end
 directory '/exports'
 directory '/exports/ingest'
+# there's a bit of chicken and the egg problem here
+# The core_ipaddress shows up before the core server
+# knows to allow these hosts to mount
 mount 'ingest-data' do
   mount_point '/exports/ingest'
   device "#{core_ipaddress}:/exports/ingest"
@@ -23,6 +26,7 @@ mount 'ingest-data' do
   options 'rw'
   action [:mount, :enable]
   not_if { core_ipaddress.eql?('127.0.0.1') }
+  ignore_failure true
   notifies :restart, 'service[ingestd]'
 end
 pacifica_ingestbackend 'ingestd' do

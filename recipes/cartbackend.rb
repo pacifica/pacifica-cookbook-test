@@ -23,6 +23,7 @@ mount 'cart-data' do
   options 'rw'
   action [:mount, :enable]
   not_if { core_ipaddress.eql?('127.0.0.1') }
+  ignore_failure true
   notifies :restart, 'service[cartd]'
 end
 pacifica_cartbackend 'cartd' do
