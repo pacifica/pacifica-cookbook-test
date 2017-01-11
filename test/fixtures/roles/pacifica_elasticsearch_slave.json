@@ -10,8 +10,7 @@
     "elasticsearch": {
       "configure": {
         "configuration": {
-          "network.host": "_site_",
-          "discovery.zen.ping.unicast.hosts": "192.168.33.19"
+          "network.host": "_site_"
         }
       },
       "install": {
@@ -25,7 +24,8 @@
   "run_list": [
     "recipe[chef-client]",
     "recipe[java]",
-    "recipe[elasticsearch]"
+    "recipe[elasticsearch]",
+    "recipe[pacifica-integration-test::elasticslave]"
   ],
   "env_run_lists": {
 
