@@ -26,3 +26,6 @@ end
 pacifica_cartfrontend 'cartwsgi' do
   service_opts cart_env
 end
+service 'cartwsgi' do
+  action [:enable, :start]
+end

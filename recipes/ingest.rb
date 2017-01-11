@@ -26,3 +26,7 @@ end
 pacifica_ingestfrontend 'ingest' do
   service_opts ingest_env
 end
+service 'ingest' do
+  action [:enable, :start]
+end
+

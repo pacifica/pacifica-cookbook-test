@@ -21,8 +21,11 @@ mount 'cart-data' do
   options 'rw'
   action [:mount, :enable]
   not_if { core_ipaddress.eql?('127.0.0.1') }
-  notifies :restart, 'service[cartwsgi]'
+  notifies :restart, 'service[cartd]'
 end
 pacifica_cartbackend 'cartd' do
   service_opts cart_env
+end
+service 'cartd' do
+  action [:enable, :start]
 end
