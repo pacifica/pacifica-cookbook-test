@@ -8,5 +8,9 @@ search(
 end
 pacifica_varnish 'default' do
   backend_hosts es_endpoints
+  listen_port 9090
+end
+pacifica_nginx 'default' do
+  backend_hosts es_endpoints
   listen_port 9200
 end
