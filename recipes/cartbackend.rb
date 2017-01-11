@@ -14,6 +14,8 @@ include_recipe 'nfs'
 mysql_client 'default' do
   action :create
 end
+directory '/exports'
+directory '/exports/cart'
 mount 'cart-data' do
   mount_point '/exports/cart'
   device "#{core_ipaddress}:/exports/cart"

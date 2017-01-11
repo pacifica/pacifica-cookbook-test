@@ -14,6 +14,8 @@ include_recipe 'nfs'
 mysql_client 'default' do
   action :create
 end
+directory '/exports'
+directory '/exports/ingest'
 mount 'ingest-data' do
   mount_point '/exports/ingest'
   device "#{core_ipaddress}:/exports/ingest"
