@@ -23,6 +23,6 @@ mount 'cart-data' do
   not_if { core_ipaddress.eql?('127.0.0.1') }
   notifies :restart, 'service[cartwsgi]'
 end
-pacifica_cartfrontend 'cartwsgi' do
+pacifica_cartbackend 'cartd' do
   service_opts cart_env
 end

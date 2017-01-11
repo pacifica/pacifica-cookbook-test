@@ -23,6 +23,6 @@ mount 'ingest-data' do
   not_if { core_ipaddress.eql?('127.0.0.1') }
   notifies :restart, 'service[ingest]'
 end
-pacifica_ingestfrontend 'ingest' do
+pacifica_ingestbackend 'ingestd' do
   service_opts ingest_env
 end
