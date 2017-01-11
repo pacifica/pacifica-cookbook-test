@@ -24,8 +24,8 @@
   "run_list": [
     "recipe[chef-client]",
     "recipe[java]",
-    "recipe[elasticsearch]",
-    "recipe[pacifica-integration-test::elasticslave]"
+    "recipe[pacifica-integration-test::elasticslave]",
+    "recipe[elasticsearch]"
   ],
   "env_run_lists": {
 
