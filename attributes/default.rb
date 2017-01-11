@@ -7,4 +7,3 @@ default['postgresql']['pg_hba'] = [
   {:type => 'host', :db => 'all', :user => 'all', :addr => '::1/128', :method => 'md5'},
   {:type => 'host', :db => 'metadata', :user => 'metadata', :addr => '0.0.0.0/0', :method => 'md5'}
 ]
-default['elasticsearch']['configure']['configuration']['discovery.zen.ping.unicast.hosts'] = elasticsearch_master_ipaddress
