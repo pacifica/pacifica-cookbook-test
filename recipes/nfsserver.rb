@@ -1,5 +1,7 @@
 include_recipe 'nfs::server'
-directory '/exports'
+link '/exports' do
+  to '/mnt'
+end
 directory '/exports/ingest'
 directory '/exports/cart'
 (ingest_ipaddresses + worker_ipaddresses).each do |ipaddr|
