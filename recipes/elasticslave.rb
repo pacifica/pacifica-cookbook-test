@@ -1,2 +1,1 @@
-
-"discovery.zen.ping.unicast.hosts": "192.168.33.19"
+# do nothing as we just need the attributes
