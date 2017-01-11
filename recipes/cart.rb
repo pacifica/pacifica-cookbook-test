@@ -9,8 +9,18 @@ cart_env = {
 }
 include_recipe 'yum-mysql-community::mysql56'
 include_recipe 'build-essential'
+include_recipe 'nfs'
 mysql_client 'default' do
   action :create
+end
+mount 'cart-data' do
+  mount_point '/exports/cart'
+  device "#{core_ipaddress}:/exports/cart"
+  fstype 'nfs'
+  options 'rw'
+  action [:mount, :enable]
+  not_if { core_ipaddress.eql?('127.0.0.1') }
+  notifies :restart, 'service[cartwsgi]'
 end
 pacifica_cartfrontend 'cartwsgi' do
   service_opts cart_env
