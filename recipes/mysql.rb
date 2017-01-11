@@ -46,7 +46,7 @@ end
   uniqueid: {
     password: 'uniqueid',
     connection: mysql_connection_info,
-    host: node['ipaddress'],
+    host: core_ipaddress,
     database_name: 'uniqueid',
     action: [:grant],
     provider: Chef::Provider::Database::MysqlUser,
@@ -54,7 +54,7 @@ end
   cart: {
     password: 'cart',
     connection: mysql_connection_info,
-    host: node['ipaddress'],
+    host: '%',
     database_name: 'cartd',
     action: [:grant],
     provider: Chef::Provider::Database::MysqlUser,
@@ -62,7 +62,7 @@ end
   ingest: {
     password: 'ingest',
     connection: mysql_connection_info,
-    host: node['ipaddress'],
+    host: '%',
     database_name: 'ingest',
     action: [:grant],
     provider: Chef::Provider::Database::MysqlUser,
