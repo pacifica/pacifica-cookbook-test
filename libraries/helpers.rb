@@ -4,6 +4,7 @@
   elasticsearch_master
   elasticsearch_slave
   ingest
+  worker
   pgsql
 ).each do |role_suffix|
   unless self.class.public_method_defined?("#{role_suffix}_ipaddresses")
