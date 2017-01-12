@@ -7,5 +7,6 @@ reporting_env = {
   }
 }
 pacifica_reporting 'reporting' do
+  site_fqdn node['pacifica-integration-test']['reporting_fqdn']
   php_fpm_opts reporting_env
 end

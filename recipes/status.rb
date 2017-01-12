@@ -7,5 +7,6 @@ status_env = {
   }
 }
 pacifica_status 'status' do
+  site_fqdn node['pacifica-integration-test']['status_fqdn']
   php_fpm_opts status_env
 end
