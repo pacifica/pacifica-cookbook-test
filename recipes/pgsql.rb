@@ -1,5 +1,6 @@
 include_recipe 'postgresql::ruby'
 include_recipe 'postgresql::server'
+include_recipe 'postgresql::config_pgtune'
 
 postgresql_connection_info = {
   host: '127.0.0.1',
