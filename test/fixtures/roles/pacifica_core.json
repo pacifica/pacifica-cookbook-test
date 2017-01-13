@@ -5,6 +5,7 @@
   "chef_type": "role",
   "default_attributes": {
     "rabbitmq": {
+      "loopback_users": [],
       "enabled_users": [
         {
           "name": "guest",
