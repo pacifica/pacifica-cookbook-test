@@ -8,7 +8,15 @@
       "enabled_users": [
         {
           "name": "guest",
-          "password": "guest"
+          "password": "guest",
+          "rights": [
+            {
+              "vhost": "/",
+              "conf": ".*",
+              "write": ".*",
+              "read": ".*"
+            }
+          ]
         }
       ]
     }
