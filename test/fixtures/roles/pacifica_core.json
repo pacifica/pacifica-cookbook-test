@@ -4,7 +4,14 @@
   "json_class": "Chef::Role",
   "chef_type": "role",
   "default_attributes": {
-
+    "rabbitmq": {
+      "enabled_users": [
+        {
+          "name": "guest",
+          "password": "guest"
+        }
+      }
+    }
   },
   "override_attributes": {
 
