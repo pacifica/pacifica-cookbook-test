@@ -19,6 +19,7 @@
   "run_list": [
     "recipe[chef-client]",
     "recipe[rabbitmq]",
+    "recipe[rabbitmq::user_management]",
     "recipe[pacifica-integration-test::mysql]",
     "recipe[pacifica-integration-test::uniqueid]",
     "recipe[pacifica-integration-test::metadata]",
