@@ -10,7 +10,7 @@
           "name": "guest",
           "password": "guest"
         }
-      }
+      ]
     }
   },
   "override_attributes": {
