@@ -6,19 +6,20 @@
   "default_attributes": {
     "rabbitmq": {
       "loopback_users": [],
+      "virtualhosts": ["cart", "ingest"],
       "enabled_users": [
         {
           "name": "guest",
           "password": "guest",
           "rights": [
             {
-              "vhost": "/cart",
+              "vhost": "cart",
               "conf": ".*",
               "write": ".*",
               "read": ".*"
             },
             {
-              "vhost": "/ingest",
+              "vhost": "ingest",
               "conf": ".*",
               "write": ".*",
               "read": ".*"
@@ -34,6 +35,7 @@
   "run_list": [
     "recipe[chef-client]",
     "recipe[rabbitmq]",
+    "recipe[rabbitmq::virtualhost_management]",
     "recipe[rabbitmq::user_management]",
     "recipe[pacifica-integration-test::mysql]",
     "recipe[pacifica-integration-test::uniqueid]",
