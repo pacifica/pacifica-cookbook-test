@@ -4,7 +4,23 @@
   "json_class": "Chef::Role",
   "chef_type": "role",
   "default_attributes": {
-
+    "rabbitmq": {
+      "loopback_users": [],
+      "enabled_users": [
+        {
+          "name": "guest",
+          "password": "guest",
+          "rights": [
+            {
+              "vhost": "/",
+              "conf": ".*",
+              "write": ".*",
+              "read": ".*"
+            }
+          ]
+        }
+      ]
+    }
   },
   "override_attributes": {
 
@@ -12,6 +28,7 @@
   "run_list": [
     "recipe[chef-client]",
     "recipe[rabbitmq]",
+    "recipe[rabbitmq::user_management]",
     "recipe[pacifica-integration-test::mysql]",
     "recipe[pacifica-integration-test::uniqueid]",
     "recipe[pacifica-integration-test::metadata]",
