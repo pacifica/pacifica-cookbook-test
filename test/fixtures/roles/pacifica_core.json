@@ -12,7 +12,13 @@
           "password": "guest",
           "rights": [
             {
-              "vhost": "/",
+              "vhost": "/cart",
+              "conf": ".*",
+              "write": ".*",
+              "read": ".*"
+            },
+            {
+              "vhost": "/ingest",
               "conf": ".*",
               "write": ".*",
               "read": ".*"
