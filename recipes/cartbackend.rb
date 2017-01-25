@@ -6,6 +6,7 @@ cart_env = {
     MYSQL_ENV_MYSQL_USER: 'cart',
     MYSQL_ENV_MYSQL_PASSWORD: 'cart',
     VOLUME_PATH: '/exports/cart',
+    AMQP_VHOST: '/cart',
   },
 }
 include_recipe 'yum-mysql-community::mysql56'

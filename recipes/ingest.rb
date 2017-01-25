@@ -10,6 +10,7 @@ ingest_env = {
     MYSQL_ENV_MYSQL_USER: 'ingest',
     MYSQL_ENV_MYSQL_PASSWORD: 'ingest',
     VOLUME_PATH: '/exports/ingest',
+    BROKER_VHOST: '/ingest',
   },
 }
 include_recipe 'yum-mysql-community::mysql56'
