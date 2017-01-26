@@ -10,3 +10,4 @@ default['postgresql']['pg_hba'] = [
 
 default['pacifica-integration-test']['status_fqdn'] = 'http://127.0.0.1'
 default['pacifica-integration-test']['reporting_fqdn'] = 'http://127.0.0.1'
+default['pacifica-integration-test']['cart_external_url'] = 'http://127.0.0.1'

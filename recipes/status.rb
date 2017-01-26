@@ -3,7 +3,8 @@ status_env = {
   additional_config: {
     "env[METADATA_PORT]" => "tcp://#{core_ipaddress}:8121",
     "env[POLICY_PORT]" => "tcp://#{core_ipaddress}:8181",
-    "env[CART_PORT]" => "tcp://127.0.0.1:8081"
+    "env[CART_PORT]" => "tcp://127.0.0.1:8081",
+    "env[CART_DOWNLOAD_PORT]" => node['pacifica-integration-test']['cart_external_url']
   }
 }
 pacifica_status 'status' do
