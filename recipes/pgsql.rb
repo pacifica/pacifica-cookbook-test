@@ -10,6 +10,14 @@ postgresql_connection_info = {
 }
 
 {
+  status: {
+    provider: Chef::Provider::Database::Postgresql,
+    connection: postgresql_connection_info,
+  },
+  reporting: {
+    provider: Chef::Provider::Database::Postgresql,
+    connection: postgresql_connection_info,
+  },
   metadata: {
     provider: Chef::Provider::Database::Postgresql,
     connection: postgresql_connection_info,
@@ -22,6 +30,20 @@ postgresql_connection_info = {
   end
 end
 {
+  status: {
+    password: 'status',
+    database_name: 'status',
+    provider: Chef::Provider::Database::PostgresqlUser,
+    connection: postgresql_connection_info,
+    action: [:create, :grant],
+  },
+  reporting: {
+    password: 'reporting',
+    database_name: 'reporting',
+    provider: Chef::Provider::Database::PostgresqlUser,
+    connection: postgresql_connection_info,
+    action: [:create, :grant],
+  },
   metadata: {
     password: 'metadata',
     database_name: 'metadata',
