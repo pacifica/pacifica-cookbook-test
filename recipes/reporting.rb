@@ -6,7 +6,17 @@ reporting_env = {
     "env[CART_PORT]" => "tcp://127.0.0.1:8081"
   }
 }
+reporting_config_vars = {
+  base_url: node['pacifica-integration-test']['reporting_fqdn'],
+  db_host: pgsql_ipaddress,
+  db_user: 'reporting',
+  db_pass: 'reporting',
+  db_name: 'reporting',
+  db_driver: 'postgres',
+  cache_on: 'FALSE',
+  cache_dir: '',
+}
 pacifica_reporting 'reporting' do
-  site_fqdn node['pacifica-integration-test']['reporting_fqdn']
   php_fpm_opts reporting_env
+  ci_prod_template_vars reporting_config_vars
 end

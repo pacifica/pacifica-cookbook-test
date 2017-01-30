@@ -7,7 +7,17 @@ status_env = {
     "env[CART_DOWNLOAD_PORT]" => node['pacifica-integration-test']['cart_external_url']
   }
 }
+status_config_vars = {
+  base_url: node['pacifica-integration-test']['status_fqdn'],
+  db_host: pgsql_ipaddress,
+  db_user: 'status',
+  db_pass: 'status',
+  db_name: 'status',
+  db_driver: 'postgres',
+  cache_on: 'FALSE',
+  cache_dir: '',
+}
 pacifica_status 'status' do
-  site_fqdn node['pacifica-integration-test']['status_fqdn']
   php_fpm_opts status_env
+  ci_prod_template_vars status_config_vars
 end
