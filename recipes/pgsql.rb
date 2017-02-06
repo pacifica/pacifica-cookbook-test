@@ -2,6 +2,15 @@ include_recipe 'postgresql::ruby'
 include_recipe 'postgresql::server'
 include_recipe 'postgresql::config_pgtune'
 
+node.default['postgresql']['pg_hba'] = [
+  {
+    'type' => 'local',
+    'db' => 'all',
+    'user' => 'postgres',
+    'method' => 'trust'
+  }
+]
+
 postgresql_connection_info = {
   host: '127.0.0.1',
   port: node['postgresql']['config']['port'],
@@ -56,5 +65,20 @@ end
     data.each do |attr, value|
       send(attr, value)
     end
+  end
+  access_hosts = []
+  access_hosts += [core_ipaddress]
+  access_hosts += ingest_ipaddresses
+  access_hosts += worker_ipaddresses
+  access_hosts.each do |ipaddr|
+    node.default['postgresql']['pg_hba'].append(
+      {
+        'type' => 'host',
+        'db' => data['database_name'],
+        'user' => user,
+        'addr' => "#{ipaddr}/32",
+        'method' => 'md5'
+      }
+    )
   end
 end
