@@ -71,7 +71,7 @@ end
   access_hosts += ingest_ipaddresses
   access_hosts += worker_ipaddresses
   access_hosts.each do |ipaddr|
-    node.default['postgresql']['pg_hba'].append(
+    node.default['postgresql']['pg_hba'].push(
       {
         'type' => 'host',
         'db' => data['database_name'],
