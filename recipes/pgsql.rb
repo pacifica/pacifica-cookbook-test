@@ -74,8 +74,8 @@ end
     node.default['postgresql']['pg_hba'].push(
       {
         type: 'host',
-        db: data['database_name'],
-        user: user,
+        db: data[:database_name],
+        user: user.to_s,
         addr: "#{ipaddr}/32",
         method: 'md5',
       }
