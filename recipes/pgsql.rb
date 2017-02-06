@@ -4,10 +4,10 @@ include_recipe 'postgresql::config_pgtune'
 
 node.default['postgresql']['pg_hba'] = [
   {
-    'type' => 'local',
-    'db' => 'all',
-    'user' => 'postgres',
-    'method' => 'trust'
+    type: 'local',
+    db: 'all',
+    user: 'postgres',
+    method: 'trust',
   }
 ]
 
@@ -73,11 +73,11 @@ end
   access_hosts.each do |ipaddr|
     node.default['postgresql']['pg_hba'].push(
       {
-        'type' => 'host',
-        'db' => data['database_name'],
-        'user' => user,
-        'addr' => "#{ipaddr}/32",
-        'method' => 'md5'
+        type: 'host',
+        db: data['database_name'],
+        user: user,
+        addr: "#{ipaddr}/32",
+        method: 'md5',
       }
     )
   end
