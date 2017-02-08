@@ -9,7 +9,7 @@ status_env = {
 }
 status_config_vars = {
   base_url: node['pacifica-integration-test']['status_fqdn'],
-  timezone: 'US/Pacific',
+  timezone: 'UTC',
 }
 status_database_vars = {
   db_host: pgsql_ipaddress,

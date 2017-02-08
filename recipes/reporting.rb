@@ -8,7 +8,7 @@ reporting_env = {
 }
 reporting_config_vars = {
   base_url: node['pacifica-integration-test']['reporting_fqdn'],
-  timezone: 'US/Pacific',
+  timezone: 'UTC',
 }
 reporting_database_vars = {
   db_host: pgsql_ipaddress,
