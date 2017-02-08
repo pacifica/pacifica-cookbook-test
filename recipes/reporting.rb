@@ -15,7 +15,7 @@ reporting_database_vars = {
   db_user: 'reporting',
   db_pass: 'reporting',
   db_name: 'reporting',
-  db_driver: 'postgres',
+  db_driver: 'postgre',
   cache_on: 'FALSE',
   cache_dir: '',
 }

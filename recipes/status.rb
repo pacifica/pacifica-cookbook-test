@@ -16,7 +16,7 @@ status_database_vars = {
   db_user: 'status',
   db_pass: 'status',
   db_name: 'status',
-  db_driver: 'postgres',
+  db_driver: 'postgre',
   cache_on: 'FALSE',
   cache_dir: '',
 }
