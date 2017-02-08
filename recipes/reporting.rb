@@ -8,6 +8,9 @@ reporting_env = {
 }
 reporting_config_vars = {
   base_url: node['pacifica-integration-test']['reporting_fqdn'],
+  timezone: 'US/Pacific',
+}
+reporting_database_vars = {
   db_host: pgsql_ipaddress,
   db_user: 'reporting',
   db_pass: 'reporting',
@@ -18,5 +21,6 @@ reporting_config_vars = {
 }
 pacifica_reporting 'reporting' do
   php_fpm_opts reporting_env
-  ci_prod_template_vars reporting_config_vars
+  ci_prod_config_vars reporting_config_vars
+  ci_prod_database_vars reporting_database_vars
 end

@@ -9,6 +9,9 @@ status_env = {
 }
 status_config_vars = {
   base_url: node['pacifica-integration-test']['status_fqdn'],
+  timezone: 'US/Pacific',
+}
+status_database_vars = {
   db_host: pgsql_ipaddress,
   db_user: 'status',
   db_pass: 'status',
@@ -19,5 +22,6 @@ status_config_vars = {
 }
 pacifica_status 'status' do
   php_fpm_opts status_env
-  ci_prod_template_vars status_config_vars
+  ci_prod_config_vars status_config_vars
+  ci_prod_database_vars status_database_vars
 end
