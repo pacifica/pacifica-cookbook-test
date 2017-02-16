@@ -1,0 +1,20 @@
+{
+  "description": "The upload server role.",
+  "name": "pacifica_uploader",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "run_list": [
+    "recipe[chef-client]",
+    "recipe[pacifica-integration-test::uploader]",
+    "recipe[pacifica-integration-test::uploadbackend]"
+  ],
+  "env_run_lists": {
+
+  }
+}

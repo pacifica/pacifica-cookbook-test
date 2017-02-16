@@ -6,12 +6,24 @@
   "default_attributes": {
     "rabbitmq": {
       "loopback_users": [],
-      "virtualhosts": ["/cart", "/ingest"],
+      "virtualhosts": ["/cart", "/ingest", "/uploader1", "/uploader2"],
       "enabled_users": [
         {
           "name": "guest",
           "password": "guest",
           "rights": [
+            {
+              "vhost": "/uploader1",
+              "conf": ".*",
+              "write": ".*",
+              "read": ".*"
+            },
+            {
+              "vhost": "/uploader2",
+              "conf": ".*",
+              "write": ".*",
+              "read": ".*"
+            },
             {
               "vhost": "/cart",
               "conf": ".*",
