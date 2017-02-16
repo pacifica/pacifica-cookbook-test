@@ -1,5 +1,5 @@
 {
-  "id": "uploader",
+  "id": "uploader2",
   "config": {
     "dataRoot": "/usr/share/man",
     "target": "/exports/uploader/up2",
