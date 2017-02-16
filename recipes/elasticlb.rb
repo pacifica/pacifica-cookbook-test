@@ -9,9 +9,9 @@ end
 pacifica_varnish 'eslb' do
   backend_hosts es_endpoints
   listen_port 9090
+  probe_url '/_cluster/health'
 end
 pacifica_nginx 'eslb' do
   backend_hosts es_endpoints
   listen_port 9200
-  probe_url '/_cluster/health'
 end
