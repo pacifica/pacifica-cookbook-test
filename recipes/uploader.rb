@@ -30,7 +30,7 @@ pacifica_uploaderfrontend 'uploader2' do
 end
 %w(uploader1 uploader2).each do |uploader_part|
   file "/opt/#{uploader_part}/source/UploaderConfig.json" do
-    content data_bag_item('pacifica', #{uploader_part})['config'].to_json
+    content data_bag_item('pacifica', uploader_part)['config'].to_json
   end
 end
 service 'uploader1' do
