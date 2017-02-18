@@ -12,7 +12,7 @@
   "run_list": [
     "recipe[chef-client]",
     "recipe[pacifica-integration-test::uploader]",
-    "recipe[pacifica-integration-test::uploadbackend]"
+    "recipe[pacifica-integration-test::uploaderbackend]"
   ],
   "env_run_lists": {
 
