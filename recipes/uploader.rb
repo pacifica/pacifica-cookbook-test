@@ -4,8 +4,8 @@ uploader_env = {
   POLICY_SERVER: core_ipaddress,
   BROKER_VHOST: '/uploader',
 }
-uploader1_env = { environment: uploader_env.clone }
-uploader2_env = { environment: uploader_env.clone }
+uploader1_env = { 'environment' => uploader_env.clone }
+uploader2_env = { 'environment' => uploader_env.clone }
 uploader1_env['environment']['BROKER_VHOST'] = '/uploader1'
 uploader2_env['environment']['BROKER_VHOST'] = '/uploader2'
 include_recipe 'nfs'
