@@ -1,8 +1,8 @@
 uploader_env = {
-  BROKER_SERVER: core_ipaddress,
-  MYSQL_PORT_3306_TCP_ADDR: core_ipaddress,
-  POLICY_SERVER: core_ipaddress,
-  BROKER_VHOST: '/uploader',
+  'BROKER_SERVER' => core_ipaddress,
+  'MYSQL_PORT_3306_TCP_ADDR' => core_ipaddress,
+  'POLICY_SERVER' => core_ipaddress,
+  'BROKER_VHOST' => '/uploader',
 }
 uploader1_env = { 'environment' => uploader_env.clone }
 uploader2_env = { 'environment' => uploader_env.clone }
