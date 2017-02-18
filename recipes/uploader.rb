@@ -23,10 +23,10 @@ mount 'uploader-data' do
   notifies :restart, 'service[uploader2]'
 end
 pacifica_uploaderfrontend 'uploader1' do
-  service_opts uploader_env
+  service_opts uploader1_env
 end
 pacifica_uploaderfrontend 'uploader2' do
-  service_opts uploader_env
+  service_opts uploader2_env
 end
 %w(uploader1 uploader2).each do |uploader_part|
   file "/opt/#{uploader_part}/source/UploaderConfig.json" do
