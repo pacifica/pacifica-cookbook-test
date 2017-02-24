@@ -11,6 +11,7 @@
   },
   "run_list": [
     "recipe[chef-client]",
+    "recipe[omnibus_updater]",
     "recipe[pacifica-integration-test::ingestbackend]",
     "recipe[pacifica-integration-test::cartbackend]"
   ],

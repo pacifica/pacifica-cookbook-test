@@ -46,6 +46,7 @@
   },
   "run_list": [
     "recipe[chef-client]",
+    "recipe[omnibus_updater]",
     "recipe[rabbitmq]",
     "recipe[rabbitmq::virtualhost_management]",
     "recipe[rabbitmq::user_management]",

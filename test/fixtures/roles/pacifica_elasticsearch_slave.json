@@ -23,6 +23,7 @@
   },
   "run_list": [
     "recipe[chef-client]",
+    "recipe[omnibus_updater]",
     "recipe[java]",
     "recipe[pacifica-integration-test::elasticslave]",
     "recipe[elasticsearch]"

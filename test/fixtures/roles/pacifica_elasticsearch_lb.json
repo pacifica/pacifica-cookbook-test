@@ -13,6 +13,7 @@
   },
   "run_list": [
     "recipe[chef-client]",
+    "recipe[omnibus_updater]",
     "recipe[pacifica-integration-test::elasticlb]"
   ],
   "env_run_lists": {
