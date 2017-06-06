@@ -16,6 +16,9 @@
       "install": {
         "version": "5.2.1"
       }
+    },
+    "chef_client_updater": {
+      "version": "12"
     }
   },
   "override_attributes": {
@@ -23,7 +26,7 @@
   },
   "run_list": [
     "recipe[chef-client]",
-    "recipe[omnibus_updater]",
+    "recipe[chef_client_updater]",
     "recipe[java]",
     "recipe[pacifica-integration-test::elasticslave]",
     "recipe[elasticsearch]"

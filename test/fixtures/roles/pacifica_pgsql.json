@@ -4,14 +4,16 @@
   "json_class": "Chef::Role",
   "chef_type": "role",
   "default_attributes": {
-
+    "chef_client_updater": {
+      "version": "12"
+    }
   },
   "override_attributes": {
 
   },
   "run_list": [
     "recipe[chef-client]",
-    "recipe[omnibus_updater]",
+    "recipe[chef_client_updater]",
     "recipe[pacifica-integration-test::pgsql]"
   ],
   "env_run_lists": {

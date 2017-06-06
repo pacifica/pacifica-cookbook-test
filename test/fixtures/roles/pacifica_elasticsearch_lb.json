@@ -6,6 +6,9 @@
   "default_attributes": {
     "pacifica-integration-test": {
       "elastic_search": "roles:pacifica_elasticsearch_master OR roles:pacifica_elasticsearch_slave"
+    },
+    "chef_client_updater": {
+      "version": "12"
     }
   },
   "override_attributes": {
@@ -13,7 +16,7 @@
   },
   "run_list": [
     "recipe[chef-client]",
-    "recipe[omnibus_updater]",
+    "recipe[chef_client_updater]",
     "recipe[pacifica-integration-test::elasticlb]"
   ],
   "env_run_lists": {
