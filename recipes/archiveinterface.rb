@@ -1,7 +1,7 @@
 pai_env = {
   environment: {
     PAI_BACKEND_TYPE: 'posix',
-    PAI_PREFIX: '/mnt/archiveinterface'
+    PAI_PREFIX: '/mnt/archiveinterface',
   },
 }
 directory '/mnt/archiveinterface'

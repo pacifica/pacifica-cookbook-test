@@ -37,4 +37,3 @@ end
 service 'ingest' do
   action [:enable, :start]
 end
-

@@ -41,4 +41,3 @@ end
 service 'uploader2' do
   action [:enable, :start]
 end
-

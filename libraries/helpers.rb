@@ -21,17 +21,16 @@
       ret
     end
   end
-  unless self.class.public_method_defined?("#{role_suffix}_ipaddress")
-    self.class.send(:define_method, "#{role_suffix}_ipaddress") do
-      ret = '127.0.0.1'
-      search(
-        :node,
-        "chef_environment:#{node.chef_environment} AND roles:pacifica_#{role_suffix}",
-        filter_result: { ipaddress: ['ipaddress'] }
-      ).each do |result|
-        ret = result['ipaddress']
-      end
-      ret
+  next if self.class.public_method_defined?("#{role_suffix}_ipaddress")
+  self.class.send(:define_method, "#{role_suffix}_ipaddress") do
+    ret = '127.0.0.1'
+    search(
+      :node,
+      "chef_environment:#{node.chef_environment} AND roles:pacifica_#{role_suffix}",
+      filter_result: { ipaddress: ['ipaddress'] }
+    ).each do |result|
+      ret = result['ipaddress']
     end
+    ret
   end
 end

@@ -86,19 +86,11 @@ end
       send(attr, value)
     end
   end
-  access_hosts = []
-  access_hosts += [core_ipaddress]
-  access_hosts += ingest_ipaddresses
-  access_hosts += worker_ipaddresses
-  access_hosts.each do |ipaddr|
-    node.default['postgresql']['pg_hba'].push(
-      {
-        type: 'host',
-        db: data[:database_name],
-        user: user.to_s,
-        addr: "#{ipaddr}/32",
-        method: 'md5',
-      }
-    )
-  end
+  node.default['postgresql']['pg_hba'].push(
+    type: 'host',
+    db: data[:database_name],
+    user: user.to_s,
+    addr: '172.20.218.0/24',
+    method: 'md5'
+  )
 end
