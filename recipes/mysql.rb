@@ -2,7 +2,7 @@ include_recipe 'chef-sugar'
 include_recipe 'yum-mysql-community::mysql56'
 
 mysql2_chef_gem 'default' do
-  provider Chef::Provider::Mysql2ChefGem::Mysql
+  action :install
 end
 mysql_service 'default' do
   initial_root_password 'mysql'
