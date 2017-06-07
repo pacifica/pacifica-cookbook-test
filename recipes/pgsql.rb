@@ -92,7 +92,7 @@ end
     type: 'host',
     db: data[:database_name],
     user: user.to_s,
-    addr: "#{node_ipaddress.to_s}/24',
+    addr: "#{node_ipaddress}/24",
     method: 'md5'
   )
 end
