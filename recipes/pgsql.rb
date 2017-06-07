@@ -1,3 +1,4 @@
+require 'ipaddr'
 include_recipe 'postgresql::ruby'
 include_recipe 'postgresql::server'
 include_recipe 'postgresql::config_pgtune'
@@ -86,11 +87,12 @@ end
       send(attr, value)
     end
   end
+  node_ipaddress = IPAddr.new "#{node['ipaddress']}/24"
   node.default['postgresql']['pg_hba'].push(
     type: 'host',
     db: data[:database_name],
     user: user.to_s,
-    addr: '172.20.218.0/24',
+    addr: "#{node_ipaddress.to_s}/24',
     method: 'md5'
   )
 end
