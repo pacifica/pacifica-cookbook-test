@@ -5,7 +5,7 @@ ingest_env = {
     UNIQUEID_SERVER: core_ipaddress,
     POLICY_SERVER: core_ipaddress,
     METADATA_SERVER: core_ipaddress,
-    ARCHIVEINTERFACE_SERVER: core_ipaddress,
+    ARCHIVEINTERFACE_SERVER: archive_ipaddress,
     MYSQL_ENV_MYSQL_DATABASE: 'ingest',
     MYSQL_ENV_MYSQL_USER: 'ingest',
     MYSQL_ENV_MYSQL_PASSWORD: 'ingest',

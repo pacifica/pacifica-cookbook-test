@@ -5,6 +5,7 @@
   elasticsearch_slave
   ingest
   uploader
+  archive
   worker
   pgsql
 ).each do |role_suffix|
