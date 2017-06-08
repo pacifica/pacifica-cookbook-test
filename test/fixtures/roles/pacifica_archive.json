@@ -1,0 +1,23 @@
+{
+  "description": "The archive server role.",
+  "name": "pacifica_archive",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "default_attributes": {
+    "chef_client_updater": {
+      "version": "12.20.3"
+    }
+  },
+  "override_attributes": {
+
+  },
+  "run_list": [
+    "recipe[chef-client]",
+    "recipe[chef_client_updater]",
+    "recipe[nfs]",
+    "recipe[pacifica-integration-test::archiveinterface]"
+  ],
+  "env_run_lists": {
+
+  }
+}
